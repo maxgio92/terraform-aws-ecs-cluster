@@ -57,13 +57,15 @@ variable "instance_key_name" {
 #  }
 #]
 variable "security_group_public_rules" {
-  default = []
+  default     = []
+  description = "A list of rules of the cluster SG to allow communication to the cluster from a CIDR block."
 }
 
 # Workaround to:
 # https://github.com/hashicorp/terraform/issues/17421
 variable "security_group_public_rules_count" {
-  default = 0
+  default     = 0
+  description = "The number of cluster SG public rules to attach to the cluster security group."
 }
 
 # structure:
@@ -75,13 +77,15 @@ variable "security_group_public_rules_count" {
 #  }
 #]
 variable "security_group_private_rules" {
-  default = []
+  default     = []
+  description = "A list of rules of the cluster SG to allow communication to the cluster from a security group."
 }
 
 # Workaround to:
 # https://github.com/hashicorp/terraform/issues/17421
 variable "security_group_private_rules_count" {
-  default = 0
+  default     = 0
+  description = "The number of cluster SG private rules to attach to the cluster security group."
 }
 
 variable "efs_mount" {

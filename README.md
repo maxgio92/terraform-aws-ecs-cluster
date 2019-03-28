@@ -25,10 +25,10 @@ This module creates:
 | min\_size | The minimum capacity of the autoscaling group | string | n/a | yes |
 | prefix\_name | The prefix for the name of the resources | string | `"my"` | no |
 | protect\_from\_scale\_in | Enable the instance protection setting for the autoscaling group | string | `"false"` | no |
-| security\_group\_private\_rules | structure:[{port:   "port number"protocol: "protocol"source: "source security group id"}] | list | `<list>` | no |
-| security\_group\_private\_rules\_count | Workaround to:https://github.com/hashicorp/terraform/issues/17421 | string | `"0"` | no |
-| security\_group\_public\_rules | structure:[{port:   "port number"protocol: "protocol"source: "CIDR block"}] | list | `<list>` | no |
-| security\_group\_public\_rules\_count | Workaround to:https://github.com/hashicorp/terraform/issues/17421 | string | `"0"` | no |
+| security\_group\_private\_rules | A list of rules of the cluster SG to allow communication to the cluster from a security group. | list | `<list>` | no |
+| security\_group\_private\_rules\_count | The number of cluster SG private rules to attach to the cluster security group. | string | `"0"` | no |
+| security\_group\_public\_rules | A list of rules of the cluster SG to allow communication to the cluster from a CIDR block. | list | `<list>` | no |
+| security\_group\_public\_rules\_count | The number of cluster SG public rules to attach to the cluster security group. | string | `"0"` | no |
 | subnets | A list of subnet IDs to launch the cluster in | list | n/a | yes |
 
 ## Outputs
